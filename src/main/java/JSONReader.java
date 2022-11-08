@@ -6,7 +6,7 @@ import java.util.List;
 
 public class JSONReader {
 
-    public static List<String> getJSONFromFile(String filename) {
+    public List<String> getMessageFromFile(String filename) {
         List<String> jsonTexts = new ArrayList<>();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));

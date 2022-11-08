@@ -5,10 +5,9 @@ import org.json.simple.parser.JSONParser;
 
 public class JSONtoMessage {
 
-//    List<String> JSONFiles = JSONReader.getJSONFromFile("./messages.txt");
+    public ThermometerMessage tm = new ThermometerMessage();
 
-
-    public static ThermometerMessage messageWriter(String JSONfile) {
+    public ThermometerMessage messageWriter(String JSONfile) {
 
         ThermometerMessage tm = new ThermometerMessage();
 
@@ -19,31 +18,31 @@ public class JSONtoMessage {
             JSONObject mainJsonObject = (JSONObject) object;
 
             String type = (String) mainJsonObject.get("type");
-            System.out.println("type : " + type);
+//            System.out.println("type : " + type);
             tm.setMessageType(type);
 
             JSONObject jsonObjectThermometer = (JSONObject) mainJsonObject.get("thermometer");
-            System.out.println("thermometer : ");
+//            System.out.println("thermometer : ");
 
 
             String name = (String) jsonObjectThermometer.get("name");
-            System.out.println("        name : " + name);
+//            System.out.println("        name : " + name);
             tm.setName(name);
 
             String point = (String) jsonObjectThermometer.get("point");
-            System.out.println("        point: " + point);
-            tm.setPoint(point);
+//            System.out.println("        point: " + point);
+            tm.setPoint(Point.valueOf(point));
 
             JSONObject jsonObjectValue = (JSONObject) mainJsonObject.get("value");
-            System.out.println("value: ");
+//            System.out.println("value: ");
 
 
             double temperature = (double) jsonObjectValue.get("temperature");
-            System.out.println("        temperature: " + temperature);
+//            System.out.println("        temperature: " + temperature);
             tm.setTemperature(temperature);
 
             double duration = (double) jsonObjectValue.get("duration");
-            System.out.println("        duration: " + duration);
+//            System.out.println("        duration: " + duration);
             tm.setDuration(duration);
 
         } catch (Exception ex) {
