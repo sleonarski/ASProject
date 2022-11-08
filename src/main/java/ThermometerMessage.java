@@ -2,14 +2,15 @@ public class ThermometerMessage {
 
     private String messageType;
     private String name;
-    private String point;
+//    private String point;
+    private Point point;
     private double temperature;
     private double duration;
 
     public ThermometerMessage() {
     }
 
-    public ThermometerMessage(String messageType, String name, String point, double temperature, double duration ) {
+    public ThermometerMessage(String messageType, String name, Point point, double temperature, double duration ) {
         this.messageType = messageType;
         this.name = name;
         this.point = point;
@@ -33,11 +34,11 @@ public class ThermometerMessage {
         this.name = name;
     }
 
-    public String getPoint() {
+    public Point getPoint() {
         return point;
     }
 
-    public void setPoint(String point) {
+    public void setPoint(Point point) {
         this.point = point;
     }
 
