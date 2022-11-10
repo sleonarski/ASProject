@@ -1,3 +1,4 @@
+package jsonreader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,14 +7,14 @@ import java.util.List;
 
 public class JSONReader {
 
-    public List<String> getMessageFromFile(String filename) {
-        List<String> jsonTexts = new ArrayList<>();
+    public List<String> getJSONsFromFile(String filename) {
+        List<String> jsonList = new ArrayList<>();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
 
             String line;
             while ((line = bufferedReader.readLine()) != null){
-                 jsonTexts.add(line);
+                 jsonList.add(line);
 
 
             }
@@ -23,6 +24,6 @@ public class JSONReader {
         } catch (Exception e) {
             e.printStackTrace();
         }
-         return jsonTexts;
+         return jsonList;
     }
 }
